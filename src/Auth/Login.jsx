@@ -100,7 +100,7 @@ const Login = () => {
 
           <p>
             Don’t have an account?
-            <span onClick={() => navigate("/")}> Sign Up</span>
+            <span onClick={() => navigate("/signup")}> Sign Up</span>
           </p>
         </form>
       </div>
