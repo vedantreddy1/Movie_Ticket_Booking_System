@@ -11,9 +11,21 @@ import "../styles/Cards.css";
 
 // import required modules
 import { Navigation, Pagination } from "swiper/modules";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Cards = () => {
+  const navigate = useNavigate();
+
+  const handleMovieClick = (movieId) => {
+    const loginID = localStorage.getItem("LoginID");
+
+    if (!loginID) {
+      navigate("/login");
+      return;
+    }
+
+    navigate(`/openpage/${movieId}`);
+  };
   const movies = [
     {
       id: 1,
@@ -151,6 +163,7 @@ const Cards = () => {
         >
           {movies.map((e) => (
             <SwiperSlide
+              onClick={() => handleMovieClick(e.id)}
               key={e.id}
               className="flex items-center justify-center pl-44"
             >
