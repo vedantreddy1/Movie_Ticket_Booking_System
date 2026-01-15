@@ -1,0 +1,26 @@
+{
+  "Signup": [
+    {
+      "username": "Vedant",
+      "email": "v@gmail.com",
+      "PNo": "6262878463",
+      "password": "V",
+      "Cpass": "V"
+    },
+    {
+      "username": "Soumya",
+      "email": "S@gmail.com",
+      "PNo": "9425097027",
+      "password": "H",
+      "Cpass": "H"
+    },
+    {
+      "username": "Uday",
+      "email": "U@gmail.com",
+      "PNo": "9826463199",
+      "password": "U",
+      "Cpass": "U"
+    }
+  ],
+  "Login": [{}]
+}

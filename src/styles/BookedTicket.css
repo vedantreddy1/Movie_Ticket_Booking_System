@@ -1,0 +1,148 @@
+/* ===== Ticket Wrapper ===== */
+.ticket-shape {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 30px;
+  background: linear-gradient(135deg, #0f0f0f, #1a1a1a);
+  border-radius: 20px;
+  color: #fff;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+  font-family: "Inter", sans-serif;
+  
+}
+
+/* ===== Heading ===== */
+.ticket-shape h1 {
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 25px;
+  text-align: center;
+  letter-spacing: 0.5px;
+}
+
+/* ===== Main Ticket Grid ===== */
+.TicketContainerJr {
+  display:flex;
+  flex-direction: column;
+  /* grid-template-columns: repeat(1, 1fr); */
+  gap: 24px;
+  background: #121212;
+  padding: 24px;
+  border-radius: 16px;
+}
+.image-poster{
+  margin-left: 40%;
+}
+
+/* ===== Ticket Sections ===== */
+/* .TicketContainerJr > div {
+  background: #181818;
+  padding: 18px;
+  border-radius: 14px;
+  border: 1px solid #2a2a2a;
+} */
+
+/* ===== Movie Image ===== */
+.TicketContainerJr img {
+  max-width: 100%;
+  border-radius: 10px;
+}
+
+.ticket-shape img[alt="barcode"] {
+  width: 140px;
+  margin: 12px auto;
+  display: block;
+  filter: invert(1);
+}
+
+/* ===== Text Styling ===== */
+.ticket-shape h4 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+.ticket-shape h5 {
+  font-size: 15px;
+  font-weight: 600;
+  margin-top: 6px;
+}
+
+.ticket-shape p {
+  font-size: 13px;
+  opacity: 0.85;
+  margin: 4px 0;
+  line-height: 1.4;
+}
+
+.ticket-shape .bold {
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+/* ===== Buttons ===== */
+.ticket-shape button {
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  margin-top: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.ticket-shape button:first-of-type {
+  background: linear-gradient(135deg, #ff4d4d, #ff1a1a);
+  color: #fff;
+}
+
+.ticket-shape button:first-of-type:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(255, 77, 77, 0.4);
+}
+
+.ticket-shape button:last-of-type {
+  background: #1f1f1f;
+  color: #fff;
+  border: 1px solid #333;
+}
+
+.ticket-shape button:last-of-type:hover {
+  background: #2a2a2a;
+}
+
+/* ===== Price Section ===== */
+.TicketContainerJr > div:last-child {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+}
+
+.TicketContainerJr > div:last-child p:last-child {
+  font-size: 20px;
+  font-weight: 700;
+  margin-top: 6px;
+  color: #00e676;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 900px) {
+  .TicketContainerJr {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .TicketContainerJr {
+    grid-template-columns: 1fr;
+  }
+
+  .ticket-shape {
+    margin: 20px;
+    padding: 20px;
+  }
+}

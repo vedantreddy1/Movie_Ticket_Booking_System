@@ -1,0 +1,142 @@
+.navbar {
+  width: 100%;
+  backdrop-filter: (16px);
+  background: linear-gradient(
+    135deg,
+    rgba(105, 92, 92, 0.95),
+    rgba(20, 20, 20, 0.95)
+  );
+  color: white;
+  border-bottom: 1px solid rgba(255, 255, 255, 0);
+}
+
+
+/* TOP ROW GRID */
+.nav-grid {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 24px;
+  padding: 14px 28px;
+}
+
+.logo img {
+  width: 120px;
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.6));
+  transition: transform 0.3s ease;
+}
+
+.logo img:hover {
+  transform: scale(1.05);
+}
+
+/* SEARCH */
+.search {
+  max-width: 520px;
+  width: 100%;
+  height: 40px;
+  padding: 0 16px;
+  border-radius: 999px;
+  border: none;
+  outline: none;
+  background: rgba(255, 255, 255, 0.12);
+  color: white;
+}
+
+.search::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.search:focus {
+  box-shadow: 0 0 0 2px rgba(239, 68, 68, 0.7);
+}
+
+/* RIGHT ACTIONS */
+.actions {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+}
+
+.actions select {
+  background: rgba(255, 255, 255, 0.12);
+  border: none;
+  color: white;
+  height: 36px;
+  padding: 0 10px;
+  border-radius: 8px;
+}
+
+.btn {
+  padding: 6px 16px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #ef4444, #dc2626);
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px rgba(239, 68, 68, 0.5);
+}
+
+/* SECOND ROW */
+.sub-nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 28px;
+  background: rgba(0, 0, 0, 0.25);
+  font-size: 14px;
+}
+
+.sub-nav ul {
+  display: flex;
+  gap: 22px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.sub-nav a {
+  position: relative;
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: none;
+}
+
+.sub-nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  background: #ef4444;
+  transition: width 0.25s ease;
+}
+
+.sub-nav a:hover::after {
+  width: 100%;
+}
+
+.sub-nav a:hover {
+  color: white;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .nav-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .actions {
+    justify-content: space-between;
+  }
+
+  .sub-nav {
+    flex-direction: column;
+    gap: 12px;
+  }
+}
