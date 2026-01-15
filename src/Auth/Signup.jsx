@@ -1,4 +1,4 @@
-import React, {  useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 import "../styles/Signup.css";
@@ -51,11 +51,44 @@ const Signup = () => {
   //   navigate("/login");
   // };
 
-
-
-
   const handleSubmit = async (e) => {
-     e.preventDefault();
+    e.preventDefault();
+    if (
+      !form.username ||
+      !form.email ||
+      !form.PNo ||
+      !form.password ||
+      !form.Cpass
+    ) {
+      setError("All fields are required");
+      return;
+    }
+
+    // 2. Email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(form.email)) {
+      setError("Invalid email format");
+      return;
+    }
+
+    // 3. Phone number validation
+    const phoneRegex = /^[0-9]{10}$/;
+    if (!phoneRegex.test(form.PNo)) {
+      setError("Phone number must be 10 digits");
+      return;
+    }
+
+    // 4. Password length validation
+    if (form.password.length < 6) {
+      setError("Password must be at least 6 characters");
+      return;
+    }
+
+    // 5. Password match validation
+    if (form.password !== form.Cpass) {
+      setError("Password and Confirm Password do not match");
+      return;
+    }
     let api = "http://localhost:3000/signup";
     let res = await axios.get(api);
     let user = res.data;
@@ -65,19 +98,15 @@ const Signup = () => {
       setError("email is already exsist or try with new email");
     }
 
-    
-
- let newID = Math.floor(Math.random()*10000)
-   const payload = {
-    ...form,
-    SignupID:newID
-   }
-await axios.post(api, payload);
+    let newID = Math.floor(Math.random() * 10000);
+    const payload = {
+      ...form,
+      SignupID: newID,
+    };
+    await axios.post(api, payload);
     localStorage.setItem("SignupID", JSON.stringify(newID));
     navigate("/login");
   };
-
-
 
   return (
     <div className="signup-wrapper">
