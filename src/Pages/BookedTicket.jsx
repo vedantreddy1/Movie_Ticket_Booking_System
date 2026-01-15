@@ -36,7 +36,7 @@ setBooking(res.data[0]);
     console.log(id)
     alert("Booking cancelled");
 
-    // window.location.href = "/";
+    window.location.href = "/";
   };
 
   const movie = movieExtraInfo[movieId] || movieExtraInfo.default;
